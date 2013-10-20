@@ -1,0 +1,16 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>@title</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))' type='text/javascript'></script>
+  <script src='@routes.WebJarAssets.at(WebJarAssets.locate("ui/minified/jquery-ui.min.js"))' type='text/javascript'></script>
+  <link href='@routes.Assets.at("images/favicon.ico")' rel="shortcut icon" type="image/x-icon" />
+  <link href='@routes.Assets.at("stylesheets/main.css")' rel="stylesheet" />
+</head>
+<body>
+<body>
+    @content
+  </body>
+</html>

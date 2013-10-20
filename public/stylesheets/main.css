@@ -1,0 +1,226 @@
+@media all {
+
+  h1 {
+    font-size: 28pt;
+    margin-bottom: 6pt;
+  }
+  h2 {
+    font-size: 23pt;
+    margin-top: 23pt;
+    margin-bottom: 6pt;
+  }
+  h3 {
+    font-size: 20pt;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+  }
+  h4 {
+    font-size: 17pt;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+  }
+  h5 {
+    font-size: 14pt;
+    margin-top: 18pt;
+    margin-bottom: 3pt;
+  }
+  h6 {
+    font-size: 12pt;
+    margin-top: 10pt;
+    color: #0b3e6f;
+    margin-bottom: 1pt;
+  }
+
+  p, blockquote p {
+    line-height: 130%;
+    margin-top: 6pt;
+    font-size: 11pt;
+  }
+
+  li {
+    margin-top: 3pt;
+  }
+
+  h1 small { color: #eee; }
+
+  a, a code, code a, a tt, tt a { color: #006dcc; }
+
+  code, tt, pre {
+    letter-spacing: -0.06em;
+    border: 0;
+    color: darkgreen;
+    background-color: inherit;
+    font-family: Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono', Consolas, 'Everson Mono', 'Lucida Console',
+     'Andale Mono', 'Nimbus Mono L', 'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier', monospace;
+  }
+
+  pre {
+    font-size: 12pt;
+    background-color: #eee;
+    border: thin #ccc solid;
+    padding: 6px;
+    line-height: 130%;
+  }
+
+  code, tt {
+    font-size: 12pt;
+    border: 0;
+    background-color: inherit;
+    padding: 0;
+  }
+
+  dd {
+    margin-bottom: 9pt;
+    margin-left: 2em;
+  }
+
+  kbd {
+    padding: 0 3px;
+    border: 1px solid #ccc;
+    font-size: 10pt;
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #f7f7f7;
+    font-weight: normal;
+    color: #333;
+    -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0 0.1em;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  input, select, control-group input, input[type="email"] {
+      width: 500px;
+      color: black;
+      padding: 4px;
+      border-radius: 5px;
+      border: 2px inset;
+  }
+
+  input[readonly="true"] {
+      border: none;
+      background-color: white;
+  }
+
+  input[type="image"] {
+    border: none;
+  }
+
+  label {
+    font-weight: bold;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  video { width: 100% }
+
+  a.anchor{
+    display: block;
+    position: relative;
+    top: -10px;
+    visibility: hidden;
+  }
+
+  .left {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .right {
+    float: right;
+    margin-left: 1em;
+  }
+
+  .printOnly { display: none; }
+
+  .tab-content { overflow: visible }
+
+  .text-warning {
+    background-color: #ffe45c;
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .ui-autocomplete .ui-menu-item {
+    border: thin black solid;
+    float: left;
+  }
+
+  @media (min-width: 1200px) {
+    #navbar-top .container {
+      width: 1170px;
+    }
+  }
+
+  @media (min-width: 979px) and (max-width: 1200px) {
+    #navbar-top .container {
+      width: 960px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 979px) {
+    #navbar-top .container {
+     width: 744px;
+    }
+  }
+}
+
+@media print {
+  h1 {
+    font-size: 20pt;
+    margin-bottom: 4pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-top: 18pt;
+    margin-bottom: 4pt;
+  }
+
+  h3 {
+    font-size: 16pt;
+    margin-top: 16pt;
+    margin-bottom: 4pt;
+  }
+
+  h4 {
+    font-size: 13pt;
+    margin-top: 15pt;
+    margin-bottom: 4pt;
+  }
+
+  h5 {
+    font-size: 11pt;
+    margin-top: 11pt;
+    margin-bottom: 3pt;
+  }
+
+  h6 {
+    font-size: 10pt;
+    margin-top: 8pt;
+    color: #0b3e6f;
+    margin-bottom: 1pt;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  title {
+    text-align: center;
+    border: none;
+  }
+
+  .printOnly {
+    display: block;
+  }
+
+  .tab-pane { border: none; }
+}
+
