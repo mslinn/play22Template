@@ -2,7 +2,7 @@ import sbt.Keys._
 import play.Project._
 import java.io.File
 
-name         := "mocc"
+name         := "Play Framework v2.2 Template"
 
 organization := "com.domain"
 
@@ -41,6 +41,8 @@ resolvers ++= Seq(
 
 scalacOptions ++= Seq("-deprecation", "-encoding", "UTF-8", "-feature", "-target:jvm-1.6", "-unchecked",
   "-Ywarn-adapted-args", "-Ywarn-value-discard", "-Xlint")
+
+javacOptions ++= Seq("-Xlint:deprecation", "-Xlint:unchecked", "-source", "1.7", "-target", "1.7", "-g:vars")
 
 javaOptions in Test ++= Seq( "-Dconfig.file=conf/dev.conf" )
 
