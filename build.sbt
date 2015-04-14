@@ -1,42 +1,42 @@
-import sbt.Keys._
 import play.Project._
+import play.core.PlayVersion.{current => playV}
+import sbt.Keys._
 import java.io.File
 
 name         := "Play Framework v2.2 Template"
 
 organization := "com.domain"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.5"
 
-version      := "0.1.4"
+version      := "0.1.5"
 
 playScalaSettings
 
 libraryDependencies ++= Seq(
-  "com.github.tototoshi"    %% "slick-joda-mapper"           % "0.3.0" withSources,
-  "com.typesafe"            %  "config"                      % "1.0.1" withSources,
-  "com.typesafe.slick"      %% "slick"                       % "1.0.1" withSources,
-  "postgresql"              %  "postgresql"                  % "9.1-901-1.jdbc4" withSources,
-  "com.github.nscala-time"  %% "nscala-time"                 % "0.2.0" withSources,
+  "com.github.tototoshi"    %% "slick-joda-mapper"           % "0.4.1" withSources(),
+  "com.typesafe"            %  "config"                      % "1.2.1" withSources(),
+  "com.typesafe.slick"      %% "slick"                       % "1.0.1" withSources(),
+  "postgresql"              %  "postgresql"                  % "9.1-901-1.jdbc4" withSources(),
+  "com.github.nscala-time"  %% "nscala-time"                 % "0.2.0" withSources(),
   "org.webjars"             %  "jquery-ui"                   % "1.10.2-1",
   "org.webjars"             %  "jquery-ui-themes"            % "1.10.0",
-  "org.webjars"             %% "webjars-play"                % "2.2.0",
-  "com.typesafe.play"       %% "play"                        % "2.2.0" withSources,
-  "com.typesafe.play"       %% "anorm"                       % "2.2.0" withSources,
-  "com.typesafe.play"       %% "play-jdbc"                   % "2.2.0" withSources,
-  "com.typesafe.play"       %% "play-json"                   % "2.2.0" withSources,
-  "securesocial"            %% "securesocial"                % "master-SNAPSHOT" withSources,
+  "org.webjars"             %% "webjars-play"                % "2.2.2-1",
+  "com.typesafe.play"       %% "play"                        % playV withSources(),
+  "com.typesafe.play"       %% "anorm"                       % playV withSources(),
+  "com.typesafe.play"       %% "play-jdbc"                   % playV withSources(),
+  "com.typesafe.play"       %% "play-json"                   % playV withSources(),
+  "securesocial"            %% "securesocial"                % "2.1.4" withSources(),
   //
   "junit"                   %  "junit"                       % "4.8.1"  % "test",
-  "com.typesafe.play"       %% "play-test"                   % "2.2.0" % "test" withSources(),
+  "com.typesafe.play"       %% "play-test"                   % "2.2.0"  % "test" withSources(),
   "org.scalatest"           %% "scalatest"                   % "2.0.M5b" % "test"
 )
 
 resolvers ++= Seq(
   "webjars" at "http://webjars.github.com/m2",
-  //Resolver.file("Local Repository", file(sys.env.get("PLAY22_HOME").map(_ + "/repository/local").getOrElse("")))(Resolver.ivyStylePatterns),
-  Resolver.url("play-plugin-releases", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns),
-  Resolver.url("play-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)
+  //Resolver.file("Local Repository", file(sys.env.get("PLAY_HOME").map(_ + "/repository/local").getOrElse("")))(Resolver.ivyStylePatterns),
+  Resolver.url("play-plugin-releases", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
 )
 
 scalacOptions ++= Seq("-deprecation", "-encoding", "UTF-8", "-feature", "-target:jvm-1.6", "-unchecked",
@@ -79,6 +79,8 @@ initialCommands := """ // make app resources accessible
                      |import views.html.tags._
                      |""".stripMargin
 
-//logLevel := Level.Debug
+logLevel := Level.Warn
 
-//logLevel in compile := Level.Warn
+logLevel in test := Level.Info // Level.Info is needed to see detailed output when running tests
+
+logLevel in compile := Level.Warn
